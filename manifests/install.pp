@@ -6,10 +6,11 @@ class consul::install {
 
   if $consul::data_dir {
     file { $consul::data_dir:
-      ensure => 'directory',
-      owner  => $consul::user,
-      group  => $consul::group,
-      mode   => '0755',
+      ensure  => 'directory',
+      owner   => $consul::user,
+      group   => $consul::group,
+      mode    => '0755',
+      recurse => true,
     }
   }
 
